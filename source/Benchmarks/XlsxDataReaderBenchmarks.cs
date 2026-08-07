@@ -214,7 +214,7 @@ public class XlsxReaderBenchmarks
 	[Benchmark]
 	public void ExcelReaderNetXlsx()
 	{
-		using var reader = ExcelReader.Core.Reader.Excel.FromFile(file);
+		using var reader = ExcelReader.Core.Reader.Excel.FromXlsxFile(file);
 		using var enumerator = reader.GetEnumerator();
 		enumerator.MoveNext(); // skip header row
 		while (enumerator.MoveNext())

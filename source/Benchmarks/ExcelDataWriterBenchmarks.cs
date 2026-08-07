@@ -91,8 +91,8 @@ public class ExcelWriterBenchmarks
 	public async Task ExcelReaderNetXlsx()
 	{
 		using var ns = GetStream();
-		await using var wb = await ExcelReader.Core.Writer.WorkbookWriter.CreateAsync(ns, leaveOpen: true);
-		await WriteExcelReaderNet<ExcelReader.Core.Writer.WorkbookWriter, ExcelReader.Core.Writer.SheetWriter, ExcelReader.Core.Writer.RowWriter>(wb, GetData());
+		await using var wb = await ExcelReader.Core.Writer.XlsxWorkbookWriter.CreateAsync(ns, leaveOpen: true);
+		await WriteExcelReaderNet<ExcelReader.Core.Writer.XlsxWorkbookWriter, ExcelReader.Core.Writer.XlsxSheetWriter, ExcelReader.Core.Writer.XlsxRowWriter>(wb, GetData());
 	}
 
 	[Benchmark]

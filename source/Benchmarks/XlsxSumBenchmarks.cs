@@ -179,7 +179,7 @@ public class XlsxSumBenchmarks
 	public decimal ExcelReaderNet()
 	{
 		decimal total = 0m;
-		using var reader = Excel.FromFile(file);
+		using var reader = Excel.FromXlsxFile(file);
 		using var enumerator = reader.GetEnumerator();
 		enumerator.MoveNext(); // header row
 		var header = enumerator.Current;

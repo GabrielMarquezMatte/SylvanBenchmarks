@@ -24,7 +24,7 @@ public class ExcelBinderBenchmarks
 	[Benchmark]
 	public void ExcelReaderNetXlsx()
 	{
-		using var reader = ExcelReader.Core.Reader.Excel.FromFile(file);
+		using var reader = ExcelReader.Core.Reader.Excel.FromXlsxFile(file);
 		var parser = new ExcelReader.Core.Parser.ExcelParser<SalesRecord>();
 		foreach (var rec in parser.Parse(reader))
 		{
